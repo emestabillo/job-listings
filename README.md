@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/050f4135-c4eb-45a5-945e-d51cfce0542f/deploy-status)](https://app.netlify.com/sites/lucid-rosalind-8e3d49/deploys)
+
 # Frontend Mentor - Job Listings Challenge
 
 ![Design preview for the Job Listings coding challenge](./design/desktop-preview.jpg)
