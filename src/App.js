@@ -4,6 +4,10 @@ import JobDetail from "./components/JobDetail";
 
 function App() {
   // console.log(jobListData);
-  return <JobDetail />;
+  return (
+    <main>
+      <JobDetail />
+    </main>
+  );
 }
 export default App;
