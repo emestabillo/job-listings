@@ -10,7 +10,7 @@ export default function JobItem({ handleClick, ...job }) {
     postedAt,
     location,
     contract,
-    tooling,
+    tags = []
   } = job;
   return (
     <article key={id} style={{ marginBottom: "3rem", display: "flex" }}>
@@ -23,7 +23,7 @@ export default function JobItem({ handleClick, ...job }) {
       <p>{contract}</p>
       <p>{location}</p>
       <ul style={{ listStyle: "none", padding: "0", display: "flex" }}>
-        {tooling.map((tool, index) => (
+        {tags.map((tool, index) => (
           <li key={index}>
             <button value={tool} onClick={handleClick}>
               {tool}
