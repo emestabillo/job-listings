@@ -1,11 +1,12 @@
 import React from "react";
-import JobDetail from "./components/JobDetail";
-// import FilteringTags from "./components/FilteringTags";
+import FilteringTags from "./components/FilteringTags";
+import JobList from "./components/JobList";
 
 function App() {
   return (
     <main>
-      <JobDetail />
+      <FilteringTags />
+      <JobList />
     </main>
   );
 }
