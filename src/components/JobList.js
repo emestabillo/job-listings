@@ -1,7 +1,6 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { JOB_LIST } from "../data.js";
 import JobItem from "./JobItem";
-// import useFilter from "./useFilter";
 
 export default function JobList() {
   const [tagList, setTagList] = useState([]);
@@ -17,6 +16,18 @@ export default function JobList() {
     const newTagList = tagList.filter(tagItem => tag !==tagItem);
     setTagList(newTagList);
   };
+
+  // we use effect here as tag list's update trigers job list update
+  useEffect(() => {
+    const newJobList  = [];
+    JOB_LIST.forEach(job => {
+      const jobsTagList = job.tags;
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
+      const isMatched = tagList.every(tag => jobsTagList.includes(tag));
+      if(isMatched) newJobList.push(job);
+    })
+    setJobList(newJobList);
+  }, [tagList ]) 
 
   return (
     <>
