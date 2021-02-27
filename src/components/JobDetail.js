@@ -1,8 +1,9 @@
 import { React, useState } from "react";
 import { openings } from "../data.js";
-import { FilteringTags } from "./FilteringTags";
+// import useFilter from "./useFilter";
 
 function JobDetail() {
+  // const { handleClick } = useFilter();
   const [filteredTags, setFilteredTags] = useState([]);
   console.log(filteredTags);
 
@@ -13,7 +14,7 @@ function JobDetail() {
     }
   };
 
-  const removeTag = (e) => {
+  const handleDelete = (e) => {
     setFilteredTags(
       filteredTags.filter((tag) => {
         return tag !== e.target.value;
@@ -23,18 +24,20 @@ function JobDetail() {
 
   return (
     <>
-      <ul>
-        {filteredTags.map((tag) => {
-          return (
-            <li key={tag + tag.index}>
-              {tag}
-              <button onClick={removeTag} value={tag}>
-                X
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+      {filteredTags.length > 0 && (
+        <ul>
+          {filteredTags.map((tag) => {
+            return (
+              <li key={tag + tag.index}>
+                {tag}
+                <button onClick={handleDelete} value={tag}>
+                  X
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      )}
       {openings.map((job) => {
         const {
           id,

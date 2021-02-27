@@ -1,38 +1,26 @@
-// import { React, useState } from "react";
+// import React from "react";
+// // import useFilter from "./useFilter";
 
-// export function FilteringTags() {
-//   const [filteredTags, setFilteredTags] = useState([]);
-//   console.log(filteredTags);
-
-//   // const handleClick = (e) => {
-//   //   const buttonValue = e.target.value;
-//   //   if (!filteredTags.includes(buttonValue)) {
-//   //     setFilteredTags([...filteredTags, buttonValue]);
-//   //   }
-//   // };
-
-//   const handleDelete = (e) => {
-//     setFilteredTags(
-//       filteredTags.filter((tag) => {
-//         return tag !== e.target.value;
-//       })
-//     );
-//   };
-
+// function FilteringTags() {
+//   // const { filteredTags, handleDelete } = useFilter();
 //   return (
-//     <ul>
-//       {filteredTags.map((tag) => {
-//         return (
-//           <li key={tag + tag.index}>
-//             {tag}
-//             <button onClick={handleDelete} value={tag}>
-//               X
-//             </button>
-//           </li>
-//         );
-//       })}
-//     </ul>
+//     <>
+//       {filteredTags.length > 0 && (
+//         <ul>
+//           {filteredTags.map((tag) => {
+//             return (
+//               <li key={tag + tag.index}>
+//                 {tag}
+//                 <button onClick={handleDelete} value={tag}>
+//                   X
+//                 </button>
+//               </li>
+//             );
+//           })}
+//         </ul>
+//       )}
+//     </>
 //   );
 // }
 
-// // export default FilteringTags;
+// export default FilteringTags;
