@@ -1,13 +1,13 @@
-import photosnap from './images/photosnap.svg'
-import manage from './images/manage.svg'
-import account from './images/account.svg'
-import myHome from './images/myhome.svg'
-import loopStudios from './images/loop-studios.svg'
-import faceIt from './images/faceit.svg'
-import insure from './images/insure.svg'
-import eyeCam from './images/eyecam-co.svg'
-import shortly from './images/shortly.svg'
-import theAirFilterCompany from './images/the-air-filter-company.svg'
+import account from './images/account.svg';
+import eyeCam from './images/eyecam-co.svg';
+import faceIt from './images/faceit.svg';
+import insure from './images/insure.svg';
+import loopStudios from './images/loop-studios.svg';
+import manage from './images/manage.svg';
+import myHome from './images/myhome.svg';
+import photosnap from './images/photosnap.svg';
+import shortly from './images/shortly.svg';
+import theAirFilterCompany from './images/the-air-filter-company.svg';
 
 export const openings = [
   {
@@ -161,3 +161,9 @@ export const openings = [
     tools: ["React", "Sass"],
   },
 ];
+
+export const JOB_LIST = openings.map((job) => {
+  const {languages = [], role,level,...jobData} = job;
+  const tags = new Set([...languages, role, level]);
+  return {role, level, ...jobData, tags:[...tags]};
+});
