@@ -5,7 +5,7 @@ function FilteringTags() {
   const { filteredTags, handleDelete } = useFilter();
   return (
     <>
-      {filteredTags.length > 0 && (
+      {filteredTags.length > 0 ? (
         <ul>
           {filteredTags.map((tag) => {
             return (
@@ -18,7 +18,7 @@ function FilteringTags() {
             );
           })}
         </ul>
-      )}
+      ):null}
     </>
   );
 }
